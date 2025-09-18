@@ -1,2 +1,26 @@
-<h1>이제 시작이다!!</h1>
-<P>잼있겠다</P>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Coffee Bean Info</title>
+  <style>
+    .bean-card { border: 1px solid #ccc; padding: 10px; margin: 10px; }
+  </style>
+</head>
+<body>
+  <h1>Coffee Roasteries</h1>
+  <div id="bean-list"></div>
+  <script>
+    const beans = [
+      { roastery: "Fritz", bean: "Ethiopia Yirgacheffe", flavor: "Floral, Citrus", roast: "Light" },
+      { roastery: "Blue Bottle", bean: "Colombia", flavor: "Chocolate, Nutty", roast: "Medium" }
+    ];
+    const list = document.getElementById("bean-list");
+    beans.forEach(bean => {
+      const card = document.createElement("div");
+      card.className = "bean-card";
+      card.innerHTML = `<h2>${bean.roastery}</h2><p>Bean: ${bean.bean}</p><p>Flavor: ${bean.flavor}</p><p>Roast: ${bean.roast}</p>`;
+      list.appendChild(card);
+    });
+  </script>
+</body>
+</html>
